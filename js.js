@@ -66,6 +66,15 @@ let appData = {
       alert("Сумма заработка за месяц = " + appData.monthIncome);
     }
   },
+  chooseIncome: function () {
+    let items = prompt(
+      "Какие у Вас дополнительные источники дохода? (Перечислите через запятую)",
+      ""
+    );
+    appData.income = items.split(", ");
+    appData.income.push(prompt("Может еще какие то?"));
+    appData.income.sort();
+  },
 };
 
 appData.chooseExpenses();
@@ -73,3 +82,4 @@ appData.detectDayBudget();
 appData.detectLevel();
 appData.checkSavings();
 appData.chooseOptExpenses();
+appData.chooseIncome();
