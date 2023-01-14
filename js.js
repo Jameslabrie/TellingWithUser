@@ -71,9 +71,21 @@ let appData = {
       "Какие у Вас дополнительные источники дохода? (Перечислите через запятую)",
       ""
     );
-    appData.income = items.split(", ");
-    appData.income.push(prompt("Может еще какие то?"));
-    appData.income.sort();
+    if (items != "" && items != null) {
+      appData.income = items.split(", ");
+      appData.income.push(prompt("Может еще какие то?"));
+      appData.income.sort();
+      let index = 0;
+      appData.income.forEach(function (elem, index) {
+        alert("Способы доп заработка:" + index + "=" + elem + ", ");
+        index++;
+      });
+    } else {
+      items = prompt(
+        "Какие у Вас дополнительные источники дохода? (Перечислите через запятую)",
+        ""
+      );
+    }
   },
 };
 
